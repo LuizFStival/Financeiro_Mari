@@ -33,7 +33,7 @@
     const end = text.lastIndexOf(")");
 
     if (start === -1 || end === -1) {
-      throw new Error("Resposta inválida do Google Sheets.");
+      throw new Error("Resposta inv\u00e1lida do Google Sheets.");
     }
 
     return JSON.parse(text.slice(start + 1, end));
@@ -74,7 +74,7 @@
     if (!info) {
       info = document.createElement("p");
       info.id = INFO_MONTH_ID;
-      info.className = "mt-2 text-sm text-slate-500";
+      info.className = "text-xs sm:text-sm text-slate-500 leading-snug sm:text-right";
       monthWrapper.appendChild(info);
     }
 
@@ -86,14 +86,14 @@
     if (!monthInfo) return;
 
     monthInfo.textContent = lastRenderedValue
-      ? `Última mudança detectada: ${lastRenderedValue}`
+      ? `\u00daltima mudan\u00e7a detectada: ${lastRenderedValue}`
       : "";
   };
 
   const fetchLastChange = async () => {
     const response = await fetch(buildGvizUrl());
     if (!response.ok) {
-      throw new Error("Não foi possível ler a data da aba Geral.");
+      throw new Error("N\u00e3o foi poss\u00edvel ler a data da aba Geral.");
     }
 
     const text = await response.text();

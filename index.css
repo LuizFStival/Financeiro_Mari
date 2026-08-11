@@ -1,1 +1,33 @@
 /* Placeholder stylesheet to avoid 404; Tailwind comes from the CDN. */
+
+.recharts-wrapper,
+.recharts-surface {
+  outline: none;
+}
+
+.recharts-wrapper:focus,
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus,
+.recharts-surface:focus-visible {
+  outline: none !important;
+}
+
+@media (max-width: 640px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .recharts-wrapper,
+  .recharts-surface {
+    max-width: 100%;
+  }
+
+  .recharts-responsive-container {
+    min-height: 260px;
+  }
+
+  .recharts-legend-wrapper {
+    font-size: 12px;
+  }
+}
